@@ -1,0 +1,73 @@
+---
+
+
+- name: "Print ansible_os_ and ansible_distribution"
+  debug:
+    msg: "Running on family: {{ ansible_os_family }}, distribution: {{ ansible_distribution }}"
+
+
+- name: "Install Speedtest-cli using yum if Ubuntu"
+  apt:
+    name: speedtest-cli
+    state: present
+  when: not use_get_url|bool and (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu')
+
+
+- name: "Install epel-release using yum if CentOS"
+  yum:
+    name: 
+      - epel-release
+      - python-pip
+    state: present
+  when: not use_get_url|bool and ansible_distribution == 'CentOS'
+
+
+- name: "Install Speedtest-cli using pip"
+  pip:
+    name: speedtest-cli
+  when: not use_get_url|bool and ansible_distribution == 'CentOS'
+
+
+- name: "Download speedtest-cli"
+  get_url:
+    url: "{{ speedtest_download_url }}"
+    dest: "./speedtest-cli"
+    mode: 0777
+  when: use_get_url|bool
+
+
+- name: "Create Speet-test logs directory"
+  file:
+    path: "{{ log_path }}"
+    state: directory
+    mode: 0755
+
+
+- name: "Run Speed-test cli"
+  shell: "speedtest-cli {{ output_type }} > {{ log_file }}" 
+
+
+- name: "Include Speed-test cli output file"
+  set_fact:
+    speedtest_output: "{{ lookup('file', log_file) }}"
+
+
+- name: "Include Speed-test cli output file"
+  set_fact:
+    speedtest_output: "{{ lookup('file', log_file) }}"
+
+
+- name: "Print Speed-test cli output vaules"
+  debug:
+    msg:
+    - "Timestamp   :  {{ speedtest_output.timestamp }}"
+    - "Client-IP   :  {{ speedtest_output.client['ip'] }}"
+    - "Client-ISP  :  {{ speedtest_output.client['isp'] }}"
+    - "Server-Host :  {{ speedtest_output.server['host'] }}"
+    - "Server-URL  :  {{ speedtest_output.server['url'] }}"
+    - "Ping        :  {{ speedtest_output.ping }}"
+    - "Download    :  {{ speedtest_output.download }}"
+    - "Upload      :  {{ speedtest_output.upload }}"
+    - "Received    :  {{ speedtest_output.bytes_received }}"
+    - "Sent        :  {{ speedtest_output.bytes_sent }}"
+

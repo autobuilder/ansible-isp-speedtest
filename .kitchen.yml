@@ -1,0 +1,21 @@
+
+---
+driver:
+  name: vagrant
+  
+provisioner:
+  name: ansible_playbook
+  hosts: all
+  require_ansible_repo: true
+  require_ansible_omnibus: false
+  ansible_verbose: true
+  ansible_verbosity: 1
+  ansible_diff: true
+  roles_path: ./
+  playbook: tests/test.yml
+  
+platforms:
+  - name: ubuntu-18.04
+  
+suites:
+- name: default
