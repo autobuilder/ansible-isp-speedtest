@@ -2,10 +2,9 @@
 
 # ansible-isp-speedtest
 
-Ansible role for execute isp-speedtest using cli.
-testspeed cli outputs will places on dedicated directory as json files.
 
-This role will install speedtest-cli using default package manager if not exists.
+Ansible role for install [speedtest-cli][speedtestcli] using package manager or pip,
+testspeed-cli outputs will be placed on dedicated directory as json files.
 
 Currently this works on Debian and RedHat based linux systems.
 **Tested platforms are:**
@@ -13,14 +12,17 @@ Currently this works on Debian and RedHat based linux systems.
 * Ubuntu 18.04
 
 
+
 ## Requirements
 
 * Outbound network connectivity
 
 
+
 ## Dependencies
 
 None
+
 
 
 ## Variables
@@ -34,6 +36,7 @@ None
 |output_type    | ```--json```                              | TestSpeed-cli output type |
 
 
+
 ## Example Playbook
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
@@ -43,9 +46,11 @@ Including an example of how to use your role (for instance, with variables passe
         - ansible-isp-speedtest
 ```
 
+
 ## Testing
 
 This playbook uses [Kitchen][kitchenci] for CI and local testing.
+
 
 
 ## License
@@ -56,10 +61,12 @@ This playbook uses [Kitchen][kitchenci] for CI and local testing.
 
 ## Author Information
 
-**Lior Lifshitz**
+**[Lior Lifshitz][liorlifshitz]**
 
 
+
+[speedtestcli]: https://github.com/sivel/speedtest-cli
 [kitchenci]: https://kitchen.ci
 [apache2]: https://www.apache.org/licenses/LICENSE-2.0.html
 [license]: https://github.com/liorlifshitz/ansible-isp-speedtest/blob/master/LICENSE
-
+[liorlifshitz]: https://github.com/liorlifshitz
