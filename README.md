@@ -1,5 +1,3 @@
-
-
 # ansible-isp-speedtest
 
 Ansible role for install [speedtest-cli][speedtestcli] using package manager or pip,
@@ -8,19 +6,23 @@ testspeed-cli outputs will be placed on dedicated directory as json files.
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat)](https://opensource.org/licenses/Apache-2.0)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/liorlifshitz/ansible-isp-speedtest/issues)
 
-![Ubuntu](https://img.shields.io/badge/platform-ubuntu-dd4814.svg?style=flat)
+![Platform](https://img.shields.io/badge/platform-ubuntu-dd4814.svg?style=flat)
+![Platform](https://img.shields.io/badge/platform-debian-a80030.svg?style=flat)
+![Platform](https://img.shields.io/badge/platform-centos-932279.svg?style=flat)
+<!---![Platform](https://img.shields.io/badge/platform-redhat-cc0000.svg?style=flat)--->
 
-Currently this works on the below based linux systems.
+Tested platforms are the below linux-based distros:
 
-**Tested platforms are:**
-
+* Ubuntu 16.04
 * Ubuntu 18.04
+* Debian 8
+* Debian 9
+* Centos 7
 
 
 ## Requirements
 
 * Outbound network connectivity
-
 
 
 ## Dependencies
@@ -59,7 +61,8 @@ This playbook uses [Kitchen][kitchenci] for CI and local testing.
 
 ## License
 
-**This project is made available under the terms of the [Apache-2.0][apache2]. See the [LICENSE][license] file that accompanies this distribution for the full text of the license.**
+This project is made available under the terms of the [Apache-2.0][apache2]. 
+See the [LICENSE][license] file that accompanies this distribution for the full text of the license.
 
 
 

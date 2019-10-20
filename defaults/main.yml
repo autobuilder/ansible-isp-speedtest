@@ -10,4 +10,4 @@ log_file: "{{ log_path }}/{{ log_name }}"
 output_type: "--json"
 #output_type: "--csv"
 speedtest_download_url: "https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py"
-use_get_url: false
+use_get_url: true
