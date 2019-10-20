@@ -9,8 +9,7 @@ jobs:
 
       - run:
           name: Update environment
-          command: 
-            - ansible --version
+          command: ansible --version
 
 
       - run:
