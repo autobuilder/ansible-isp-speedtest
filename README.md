@@ -2,10 +2,12 @@
 
 # ansible-isp-speedtest
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-
 Ansible role for install [speedtest-cli][speedtestcli] using package manager or pip,
 testspeed-cli outputs will be placed on dedicated directory as json files.
+
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/liorlifshitz/ansible-isp-speedtest/issues)
+
 
 Currently this works on Debian and RedHat based linux systems.
 
