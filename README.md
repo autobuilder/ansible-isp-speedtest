@@ -1,3 +1,4 @@
+
 # ansible-isp-speedtest
 
 Ansible role for install [speedtest-cli][speedtestcli] using package manager or pip,
@@ -20,9 +21,11 @@ Tested platforms are the below linux-based distros:
 * Centos 7
 
 
+
 ## Requirements
 
 * Outbound network connectivity
+
 
 
 ## Dependencies
@@ -52,6 +55,7 @@ Including an example of how to use your role (for instance, with variables passe
       roles:
         - ansible-isp-speedtest
 ```
+
 
 
 ## Test Automation
