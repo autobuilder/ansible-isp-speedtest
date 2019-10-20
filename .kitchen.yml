@@ -1,9 +1,7 @@
 ---
 
-
 driver:
   name: vagrant
-  
 
 provisioner:
   name: ansible_playbook
@@ -15,15 +13,13 @@ provisioner:
   ansible_diff: true
   roles_path: ./
   playbook: tests/test.yml
-  
 
 platforms:
   - name: ubuntu-18.04
   - name: ubuntu-16.04
-  - name: Debian-8
-  - name: Debian-9
-  - name: CentOS-7
-  
+  - name: debian-8
+  - name: debian-9
+  - name: centos-7
 
 suites:
 - name: default
