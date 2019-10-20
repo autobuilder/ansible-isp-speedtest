@@ -20,6 +20,9 @@ provisioner:
 platforms:
   - name: ubuntu-18.04
   - name: ubuntu-16.04
+  - name: Debian-8
+  - name: Debian-9
+  - name: CentOS-7
   
 
 suites:
