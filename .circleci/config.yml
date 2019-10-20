@@ -8,8 +8,8 @@ jobs:
       - checkout
 
       - run:
-          name: Update environment
-          command: ansible --version
+          name: Run ansible role on environment
+          command: ansible-playbook tests/test.yml
 
 
       - run:
