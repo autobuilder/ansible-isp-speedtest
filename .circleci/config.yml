@@ -9,7 +9,7 @@ jobs:
 
       - run:
           name: Run ansible role on environment
-          command: ansible-playbook tests/test.yml
+          command: cd tests; ansible-playbook tests/test.yml
 
 
       - run:
