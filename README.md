@@ -39,7 +39,8 @@ None
 |time           | ```Excution Time```                       | Excution time             |
 |log_name       | ```speedtest-{{ date }}-{{ time }}.log``` | Logs name                 |
 |log_path       | ```/tmp/speed_test_cli_logs```            | Logs path                 |
-|output_type    | ```--json```                              | TestSpeed-cli output type |
+|output_type    | ```json```                                | Speedtest-cli output type |
+|use_get_url    | ```true```                                | Download  Speedtest-cli   |
 
 
 
@@ -53,15 +54,16 @@ Including an example of how to use your role (for instance, with variables passe
 ```
 
 
-## Testing
+## Test Automation
 
-This playbook uses [Kitchen][kitchenci] for CI and local testing.
+Automated tests run with [Kitchen-CI][kitchenci] and [Ansible Lint][ansiblelint].
 
 
 
 ## License
 
-This project is made available under the terms of the [Apache-2.0][apache2]. 
+This project is made available under the terms of the [Apache-2.0][apache2].
+
 See the [LICENSE][license] file that accompanies this distribution for the full text of the license.
 
 
@@ -77,3 +79,4 @@ See the [LICENSE][license] file that accompanies this distribution for the full 
 [apache2]: https://www.apache.org/licenses/LICENSE-2.0.html
 [license]: https://github.com/liorlifshitz/ansible-isp-speedtest/blob/master/LICENSE
 [liorlifshitz]: https://github.com/liorlifshitz
+[ansiblelint]: https://docs.ansible.com/ansible-lint/
