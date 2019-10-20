@@ -1,4 +1,4 @@
 parseable: true
-quiet: true
+quiet: false
 use_default_rules: true
 verbosity: 1
