@@ -31,7 +31,7 @@
 - name: "Download speedtest-cli"
   get_url:
     url: "{{ speedtest_download_url }}"
-    dest: "../files/speedtest-cli"
+    dest: "{{ role_path }}/files/speedtest-cli"
     mode: 0777
   when: use_get_url|bool
 
@@ -44,14 +44,14 @@
 
 
 - name: "Run Speed-test cli"
-  shell: "../files/speedtest-cli {{ output_type }} > {{ log_file }}"
+  shell: "{{ role_path }}/files/speedtest-cli {{ output_type }} > {{ log_file }}"
   changed_when: false
 
 
 - name: "Remove Speed-test file"
   file:
     state: absent
-    path: ../files/speedtest-cli
+    path: "{{ role_path }}/files/speedtest-cli"
 
 
 - name: "Include Speed-test cli output file"
