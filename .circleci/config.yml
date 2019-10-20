@@ -3,19 +3,16 @@ jobs:
   build:
     docker:
       - image: williamyeh/ansible:ubuntu18.04
+    
+    working_directory: ~/ansible-isp-speedtest
 
     steps:
-
-
-      - run:
-          name: Create ansible-isp-speedtest direcotry
-          command: mkdir ansible-isp-speedtest; cd ansible-isp-speedtest
 
       - checkout
 
       - run:
           name: Run ansible role on environment
-          command: ansible-playbook tests/test.yml
+          command: tests/test.yml
 
 
       - run:
