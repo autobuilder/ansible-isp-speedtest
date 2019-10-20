@@ -6,12 +6,12 @@ testspeed-cli outputs will be placed on dedicated directory as json files.
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat)](https://opensource.org/licenses/Apache-2.0)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/liorlifshitz/ansible-isp-speedtest/issues)
 
+Tested platforms are the below linux-based distros:
+
 ![Platform](https://img.shields.io/badge/platform-ubuntu-dd4814.svg?style=flat)
 ![Platform](https://img.shields.io/badge/platform-debian-a80030.svg?style=flat)
 ![Platform](https://img.shields.io/badge/platform-centos-932279.svg?style=flat)
 <!---![Platform](https://img.shields.io/badge/platform-redhat-cc0000.svg?style=flat)--->
-
-Tested platforms are the below linux-based distros:
 
 * Ubuntu 16.04
 * Ubuntu 18.04
