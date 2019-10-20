@@ -2,14 +2,16 @@ version: 2
 jobs:
   build:
     docker:
-      - image: debian:stretch
+      - image: williamyeh/ansible:ubuntu18.04
 
     steps:
       - checkout
 
       - run:
-          name: Greeting
-          command: echo Hello, world.
+          name: Update environment
+          command: 
+            - ansible --version
+
 
       - run:
           name: Print the Current Time
