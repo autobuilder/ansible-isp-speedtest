@@ -1,4 +1,3 @@
-
 # ansible-isp-speedtest
 
 Ansible role for install [speedtest-cli][speedtestcli] using package manager or pip,
