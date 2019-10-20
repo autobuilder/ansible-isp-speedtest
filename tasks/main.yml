@@ -15,7 +15,7 @@
 
 - name: "Install epel-release using yum if CentOS"
   yum:
-    name: 
+    name:
       - epel-release
       - python-pip
     state: present
@@ -44,7 +44,8 @@
 
 
 - name: "Run Speed-test cli"
-  shell: "speedtest-cli {{ output_type }} > {{ log_file }}" 
+  shell: "speedtest-cli {{ output_type }} > {{ log_file }}"
+  changed_when: false
 
 
 - name: "Include Speed-test cli output file"
