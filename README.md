@@ -7,7 +7,7 @@ testspeed-cli outputs will be placed on dedicated directory as json files.
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/liorlifshitz/ansible-isp-speedtest/issues)
-
+[![Ubuntu](https://img.shields.io/badge/platform-ubuntu-dd4814.svg?style=plastic)]
 
 Currently this works on the below based linux systems.
 
