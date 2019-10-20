@@ -1,8 +1,10 @@
-
 ---
+
+
 driver:
   name: vagrant
   
+
 provisioner:
   name: ansible_playbook
   hosts: all
@@ -14,8 +16,11 @@ provisioner:
   roles_path: ./
   playbook: tests/test.yml
   
+
 platforms:
   - name: ubuntu-18.04
   
+
 suites:
 - name: default
+
