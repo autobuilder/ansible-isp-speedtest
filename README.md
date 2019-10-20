@@ -9,7 +9,7 @@ testspeed-cli outputs will be placed on dedicated directory as json files.
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/liorlifshitz/ansible-isp-speedtest/issues)
 
 
-Currently this works on Debian and RedHat based linux systems.
+Currently this works on the below based linux systems.
 
 **Tested platforms are:**
 

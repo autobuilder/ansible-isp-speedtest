@@ -1,9 +1,9 @@
 ---
 
 
-- name: "Print ansible_os_ and ansible_distribution"
+- name: "Print ansible_distribution"
   debug:
-    msg: "Running on family: {{ ansible_os_family }}, distribution: {{ ansible_distribution }}"
+    msg: "Running on distribution: {{ ansible_distribution }}"
 
 
 - name: "Install Speedtest-cli using yum if Ubuntu"
