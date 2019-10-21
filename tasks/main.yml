@@ -2,67 +2,67 @@
 
 - name: "Print ansible_distribution"
   debug:
-    msg: "Running on distribution: {{ ansible_distribution }}"
+    msg: "Running os family: {{ ansible_os_family }}"
 
-- name: "Install Speedtest-cli using yum if Ubuntu"
-  apt:
-    name: speedtest-cli
-    state: present
-  when: not use_get_url|bool and (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu')
-
-- name: "Install epel-release using yum if CentOS"
-  yum:
-    name:
-      - epel-release
-      - python-pip
-    state: present
-  when: not use_get_url|bool and ansible_distribution == 'CentOS'
-
-- name: "Install Speedtest-cli using pip"
-  pip:
-    name: speedtest-cli
-  when: not use_get_url|bool and ansible_distribution == 'CentOS'
-
-- name: "Download speedtest-cli"
-  get_url:
-    url: "{{ speedtest_download_url }}"
-    dest: "{{ role_path }}/files/speedtest-cli"
-    mode: 0777
-  when: use_get_url|bool
-
-- name: "Create Speet-test logs directory"
-  file:
-    path: "{{ log_path }}"
-    state: directory
-    mode: 0755
-
-- name: "Run Speed-test cli"
-  shell: "{{ role_path }}/files/speedtest-cli {{ output_type }} > {{ log_file }}"
-  changed_when: false
-
-- name: "Remove Speed-test file"
-  file:
-    state: absent
-    path: "{{ role_path }}/files/speedtest-cli"
-
-- name: "Include Speed-test cli output file"
-  set_fact:
-    speedtest_output: "{{ lookup('file', log_file) }}"
-
-- name: "Include Speed-test cli output file"
-  set_fact:
-    speedtest_output: "{{ lookup('file', log_file) }}"
-
-- name: "Print Speed-test cli output vaules"
+- name: "Print ansible_distribution"
+  vars:
+    msg: |
+      Running on distribution: {{ ansible_distribution }}
+      set_java_home: {{ set_java_home }}
+      java_version: {{ java_version }}
+      java_subversion: {{ java_subversion }}
+      java_buildnumber: {{ java_buildnumber }}
+      download_path: {{ download_path }}
+      download_java_from_oracle: {{ download_java_from_oracle }}
+      remove_download: {{ remove_download }}
+      java_home: {{ java_home }}
+      jdk_version: {{ jdk_version }}
+      jdk_arch: {{ jdk_arch }}
+      jdk_os: {{ jdk_os }}
+      jdk_version_detail: {{ jdk_version_detail }}
+      jdk_tarball_file: {{ jdk_tarball_file }}
+      jdk_tarball_url: {{ ansible_distribution }}
   debug:
-    msg:
-    - "Timestamp   :  {{ speedtest_output.timestamp }}"
-    - "Client-IP   :  {{ speedtest_output.client['ip'] }}"
-    - "Client-ISP  :  {{ speedtest_output.client['isp'] }}"
-    - "Server-Host :  {{ speedtest_output.server['host'] }}"
-    - "Server-URL  :  {{ speedtest_output.server['url'] }}"
-    - "Ping        :  {{ speedtest_output.ping }}"
-    - "Download    :  {{ speedtest_output.download }}"
-    - "Upload      :  {{ speedtest_output.upload }}"
-    - "Received    :  {{ speedtest_output.bytes_received }}"
-    - "Sent        :  {{ speedtest_output.bytes_sent }}"
+    msg: "{{ msg.split('\n') }}"
+
+- name: "Install software-properties-common"
+  apt:
+    name: "software-properties-common"
+    install_recommends: yes
+  when: ansible_os_family == 'Debian'
+
+- name: "Add Oracle Java repository to apt sources"
+  apt_repository:
+    repo: "{{ java_apt_repository }}"
+    state: present
+  when: ansible_os_family == 'Debian'
+
+- name: Accept Java 8 License
+  debconf:
+    name: oracle-java8-installer
+    question: shared/accepted-oracle-license-v1-1
+    value: 'true'
+    vtype: select
+
+- name: "Install Oracle Java using apt"
+  apt:
+    name: "{{ pkg }}"
+    install_recommends: yes
+  with_items:
+    - "{{ java_package_name }}"
+    - "{{ java_setdefault_package_name }}"
+    - "ca-certificates"
+  loop_control:
+    loop_var: pkg
+  when: ansible_os_family == 'Debian'
+
+- name: "Add Oracle repository to yum sources"
+  yum_repository:
+    baseurl: "{{ java_yum_repository }}"
+    state: present
+  when: ansible_os_family == 'RedHat'
+
+- name: "Install Oracle using yum"
+  yum:
+    name: "{{ java_package_name }}"
+  when: ansible_os_family == 'RedHat'

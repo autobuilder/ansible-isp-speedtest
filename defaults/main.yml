@@ -1,13 +1,32 @@
 ---
 
-# defaults file for ansible-isp-speedtest
+java_version: 8
+java_subversion: 112
+java_buildnumber: ''
 
-date: "{{ ansible_date_time.date }}"
-time: "{{ ansible_date_time.time }}"
-log_name: "speedtest-{{ date }}-{{ time }}.log"
-log_path: "/tmp/speed_test_cli_logs"
-log_file: "{{ log_path }}/{{ log_name }}"
-output_type: "--json"
-#output_type: "--csv"
-speedtest_download_url: "https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py"
-use_get_url: true
+set_java_home: false
+
+download_java_from_oracle: false
+
+download_path: /tmp
+remove_download: true
+
+java_package_name: "oracle-java{{ java_version }}-installer"
+java_setdefault_package_name: "oracle-java{{ java_version }}-set-default"
+java_apt_repository: "ppa:webupd8team/java"
+java_yum_repository: "{{ java_apt_repository }}"
+
+java_install_dir: "{% if ansible_os_family == 'Debian' %}/usr/lib/jvm{% endif %}"
+java_default_link_name: "{% if ansible_os_family == 'Debian' %}default-java{% endif %}"
+java_home: "{{ java_install_dir }}/{{ java_default_link_name }}"
+
+# JDK versions.
+jdk_version: "1.{{ java_version }}.0_{{ java_subversion }}-b{{ java_buildnumber }}"
+
+# platform-specific variables
+jdk_arch: "{{ 'i586' if ansible_architecture == 'i386' else 'x64' }}"
+jdk_os: "{% if ansible_system == 'Linux' %}linux{% else %}none{% endif %}"
+
+jdk_version_detail: "{{ java_version }}u{{ java_subversion }}-b{{ java_buildnumber }}"
+jdk_tarball_file: "jdk-{{ java_version }}u{{ java_subversion }}-{{ jdk_os }}-{{ jdk_arch }}"
+jdk_tarball_url:  "http://download.oracle.com/otn-pub/java/jdk/{{ jdk_version_detail }}/{{ jdk_tarball_file }}"
