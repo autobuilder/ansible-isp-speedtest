@@ -18,6 +18,3 @@ galaxy_info:
         - xenial
   galaxy_tags: [ "isp", "speedtest" ]
 dependencies: []
-
-
-
