@@ -1,4 +1,4 @@
 ---
 - hosts: localhost
   roles:
-    - ansible-oracle-java
+    - ansible-isp-speedtest
