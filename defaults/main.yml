@@ -1,6 +1,6 @@
 ---
-# defaults file for ansible-isp-speedtest
 
+# defaults file for ansible-isp-speedtest
 
 date: "{{ ansible_date_time.date }}"
 time: "{{ ansible_date_time.time }}"
