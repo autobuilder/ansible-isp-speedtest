@@ -16,6 +16,12 @@ pipeline {
       }
     }
 
+    stage('Linting using ansible-lint') {
+      steps {
+        sh 'ansible-lint .'
+      }
+    }
+
     stage('Provision kitchen environment') {
       steps {
         sh 'kitchen create'
