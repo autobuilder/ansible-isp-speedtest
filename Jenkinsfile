@@ -28,7 +28,7 @@ pipeline {
       }
     }
 
-    stage('Run Ansible Role on environment') {
+    stage('Run ansible-role on environment') {
       steps {
         sh 'kitchen converge'
       }
