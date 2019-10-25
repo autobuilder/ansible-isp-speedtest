@@ -1,5 +1,3 @@
----
-
 <img src="https://www.ansible.com/hubfs/2016_Images/Assets/Ansible-Mark-Large-RGB-Pool.png?hsLang=en-us" width="10%" height="10%" alt="Ansible logo" align="right"/>
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat)](https://opensource.org/licenses/Apache-2.0)
@@ -8,8 +6,6 @@
 ![Platform](https://img.shields.io/badge/platform-ubuntu-dd4814.svg?style=flat) 
 ![Platform](https://img.shields.io/badge/platform-debian-a80030.svg?style=flat) 
 ![Platform](https://img.shields.io/badge/platform-centos-932279.svg?style=flat)
-
----
 
 # ansible-isp-speedtest
 
