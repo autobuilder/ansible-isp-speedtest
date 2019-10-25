@@ -1,3 +1,5 @@
+---
+
 <img src="https://www.ansible.com/hubfs/2016_Images/Assets/Ansible-Mark-Large-RGB-Pool.png?hsLang=en-us" width="10%" height="10%" alt="Ansible logo" align="right"/>
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat)](https://opensource.org/licenses/Apache-2.0)
@@ -14,6 +16,8 @@
 Ansible role for install [speedtest-cli][speedtestcli] using package manager or pip.
 
 Speedtest-cli outputs will be placed on dedicated directory as json files.
+
+---
 
 ### Requirements
 
@@ -53,6 +57,8 @@ Tested platforms are the below linux-based distros:
 * Debian 9
 * Centos 7
 
+---
+
 ### License
 
 This project is made available under the terms of the [Apache-2.0][apache2].
@@ -62,8 +68,6 @@ See the [LICENSE][license] file that accompanies this distribution for the full 
 ### Author Information
 
 **[Lior Lifshitz][liorlifshitz]**
-
-
 
 [speedtestcli]: https://github.com/sivel/speedtest-cli
 [kitchenci]: https://kitchen.ci
