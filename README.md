@@ -2,8 +2,9 @@
 
 <img src="https://www.ansible.com/hubfs/2016_Images/Assets/Ansible-Mark-Large-RGB-Pool.png?hsLang=en-us" width="10%" height="10%" alt="Ansible logo" align="right"/>
 
-Ansible role for install [speedtest-cli][speedtestcli] using package manager or pip,
-testspeed-cli outputs will be placed on dedicated directory as json files.
+Ansible role for install [speedtest-cli][speedtestcli] using package manager or pip.
+
+Speedtest-cli outputs will be placed on dedicated directory as json files.
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat)](https://opensource.org/licenses/Apache-2.0)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/liorlifshitz/ansible-isp-speedtest/issues)
