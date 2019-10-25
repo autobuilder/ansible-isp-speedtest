@@ -41,11 +41,10 @@ Speedtest-cli outputs will be placed on dedicated directory as json files.
 
 ### Example Playbook:
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 ```yaml
-    - hosts: servers
-      roles:
-        - ansible-isp-speedtest
+- hosts: servers
+  roles:
+    - ansible-isp-speedtest
 ```
 
 ---
