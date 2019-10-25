@@ -9,8 +9,6 @@
 ![Platform](https://img.shields.io/badge/platform-debian-a80030.svg?style=flat) 
 ![Platform](https://img.shields.io/badge/platform-centos-932279.svg?style=flat)
 
----
-
 # ansible-isp-speedtest
 
 Ansible role for install [speedtest-cli][speedtestcli] using package manager or pip.
