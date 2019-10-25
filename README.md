@@ -1,5 +1,7 @@
 # ansible-isp-speedtest
 
+<img src="https://www.ansible.com/hubfs/2016_Images/Assets/Ansible-Mark-Large-RGB-Pool.png?hsLang=en-us" width="10%" height="10%" alt="Ansible logo" align="right"/>
+
 Ansible role for install [speedtest-cli][speedtestcli] using package manager or pip,
 testspeed-cli outputs will be placed on dedicated directory as json files.
 
