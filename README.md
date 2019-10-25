@@ -24,6 +24,8 @@ Speedtest-cli outputs will be placed on dedicated directory as json files.
 
 * None
 
+---
+
 ### Variables
 
 | Variable Name | Default Vaule                             | Description               |
@@ -35,6 +37,8 @@ Speedtest-cli outputs will be placed on dedicated directory as json files.
 |output_type    | ```json```                                | Speedtest-cli output type |
 |use_get_url    | ```true```                                | Download  Speedtest-cli   |
 
+---
+
 ### Example Playbook
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
@@ -43,6 +47,8 @@ Including an example of how to use your role (for instance, with variables passe
       roles:
         - ansible-isp-speedtest
 ```
+
+---
 
 ### Test Automation
 
@@ -62,11 +68,12 @@ This project is made available under the terms of the [Apache-2.0][apache2].
 
 See the [LICENSE][license] file that accompanies this distribution for the full text of the license.
 
+---
+
 #### Author Information 
 
 [Lior Lifshitz][liorlifshitz]
 
----
 
 [speedtestcli]: https://github.com/sivel/speedtest-cli
 [kitchenci]: https://kitchen.ci
