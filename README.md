@@ -1,6 +1,14 @@
-# ansible-isp-speedtest
-
 <img src="https://www.ansible.com/hubfs/2016_Images/Assets/Ansible-Mark-Large-RGB-Pool.png?hsLang=en-us" width="10%" height="10%" alt="Ansible logo" align="right"/>
+
+![Platform](https://img.shields.io/badge/platform-ubuntu-dd4814.svg?style=flat) 
+![Platform](https://img.shields.io/badge/platform-debian-a80030.svg?style=flat) 
+![Platform](https://img.shields.io/badge/platform-centos-932279.svg?style=flat)
+
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat)](https://opensource.org/licenses/Apache-2.0)
+
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/liorlifshitz/ansible-isp-speedtest/issues)
+
+# ansible-isp-speedtest
 
 Ansible role for install [speedtest-cli][speedtestcli] using package manager or pip.
 
@@ -12,7 +20,7 @@ Speedtest-cli outputs will be placed on dedicated directory as json files.
 
 ## Dependencies
 
-None
+* None
 
 ## Variables
 
@@ -39,10 +47,6 @@ Including an example of how to use your role (for instance, with variables passe
 Automated tests run with [Kitchen-CI][kitchenci] and [Ansible Lint][ansiblelint].
 Tested platforms are the below linux-based distros:
 
-![Platform](https://img.shields.io/badge/platform-ubuntu-dd4814.svg?style=flat) 
-![Platform](https://img.shields.io/badge/platform-debian-a80030.svg?style=flat) 
-![Platform](https://img.shields.io/badge/platform-centos-932279.svg?style=flat)
-
 * Ubuntu 16.04
 * Ubuntu 18.04
 * Debian 9
@@ -50,15 +54,11 @@ Tested platforms are the below linux-based distros:
 
 ## License
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat)](https://opensource.org/licenses/Apache-2.0)
-
 This project is made available under the terms of the [Apache-2.0][apache2].
 
 See the [LICENSE][license] file that accompanies this distribution for the full text of the license.
 
 ## Author Information
-
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/liorlifshitz/ansible-isp-speedtest/issues)
 
 **[Lior Lifshitz][liorlifshitz]**
 
