@@ -62,7 +62,9 @@ This project is made available under the terms of the [Apache-2.0][apache2].
 
 See the [LICENSE][license] file that accompanies this distribution for the full text of the license.
 
-#### Author Information **[Lior Lifshitz][liorlifshitz]**
+#### Author Information 
+
+[Lior Lifshitz][liorlifshitz]
 
 ---
 
