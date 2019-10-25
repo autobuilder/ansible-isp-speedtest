@@ -57,9 +57,10 @@ See the [LICENSE][license] file that accompanies this distribution for the full 
 
 ## Author Information
 
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/liorlifshitz/ansible-isp-speedtest/issues)
+
 **[Lior Lifshitz][liorlifshitz]**
 
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/liorlifshitz/ansible-isp-speedtest/issues)
 
 [speedtestcli]: https://github.com/sivel/speedtest-cli
 [kitchenci]: https://kitchen.ci
