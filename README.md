@@ -15,15 +15,15 @@ Ansible role for install [speedtest-cli][speedtestcli] using package manager or 
 
 Speedtest-cli outputs will be placed on dedicated directory as json files.
 
-## Requirements
+### Requirements
 
 * Outbound network connectivity
 
-## Dependencies
+### Dependencies
 
 * None
 
-## Variables
+### Variables
 
 | Variable Name | Default Vaule                             | Description               |
 |:--------------|:------------------------------------------|:--------------------------|
@@ -34,7 +34,7 @@ Speedtest-cli outputs will be placed on dedicated directory as json files.
 |output_type    | ```json```                                | Speedtest-cli output type |
 |use_get_url    | ```true```                                | Download  Speedtest-cli   |
 
-## Example Playbook
+### Example Playbook
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 ```yaml
@@ -43,7 +43,7 @@ Including an example of how to use your role (for instance, with variables passe
         - ansible-isp-speedtest
 ```
 
-## Test Automation
+### Test Automation
 
 Automated tests run with [Kitchen-CI][kitchenci] and [Ansible Lint][ansiblelint].
 Tested platforms are the below linux-based distros:
@@ -53,17 +53,17 @@ Tested platforms are the below linux-based distros:
 * Debian 9
 * Centos 7
 
-## License
+### License
 
 This project is made available under the terms of the [Apache-2.0][apache2].
 
 See the [LICENSE][license] file that accompanies this distribution for the full text of the license.
 
-## Author Information
+### Author Information
 
 **[Lior Lifshitz][liorlifshitz]**
 
----
+
 
 [speedtestcli]: https://github.com/sivel/speedtest-cli
 [kitchenci]: https://kitchen.ci
