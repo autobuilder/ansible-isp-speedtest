@@ -1,5 +1,3 @@
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat)](https://opensource.org/licenses/Apache-2.0)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/liorlifshitz/ansible-isp-speedtest/issues)
 <img src="https://www.ansible.com/hubfs/2016_Images/Assets/Ansible-Mark-Large-RGB-Pool.png?hsLang=en-us" width="10%" height="10%" alt="Ansible logo" align="right"/>
 
 # ansible-isp-speedtest
@@ -50,7 +48,7 @@ Tested platforms are the below linux-based distros:
 * Debian 9
 * Centos 7
 
-## License
+## License [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat)](https://opensource.org/licenses/Apache-2.0)
 
 This project is made available under the terms of the [Apache-2.0][apache2].
 
@@ -59,6 +57,8 @@ See the [LICENSE][license] file that accompanies this distribution for the full 
 ## Author Information
 
 **[Lior Lifshitz][liorlifshitz]**
+
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/liorlifshitz/ansible-isp-speedtest/issues)
 
 [speedtestcli]: https://github.com/sivel/speedtest-cli
 [kitchenci]: https://kitchen.ci
