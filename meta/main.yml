@@ -1,5 +1,5 @@
 galaxy_info:
-  author: Lior Lifshitz
+  author: AutoBuilder
   description: Ansible role for install and test your ips speed.
   company: None
   license: "license (Apache)"
