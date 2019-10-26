@@ -5,7 +5,7 @@
 <img src="https://www.ansible.com/hubfs/2016_Images/Assets/Ansible-Mark-Large-RGB-Pool.png?hsLang=en-us" width="10%" height="10%" alt="Ansible logo" align="right"/>
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat)](https://opensource.org/licenses/Apache-2.0)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/liorlifshitz/ansible-isp-speedtest/issues)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/autobuilder/ansible-isp-speedtest/issues)
 
 ![Platform](https://img.shields.io/badge/platform-ubuntu-dd4814.svg?style=flat) 
 ![Platform](https://img.shields.io/badge/platform-debian-a80030.svg?style=flat) 
@@ -72,12 +72,12 @@ See the [LICENSE][license] file that accompanies this distribution for the full 
 
 #### Author Information:
 
-[Lior Lifshitz][liorlifshitz]
+[AutoBuilder][autobuilder]
 
 
 [speedtestcli]: https://github.com/sivel/speedtest-cli
 [kitchenci]: https://kitchen.ci
 [apache2]: https://www.apache.org/licenses/LICENSE-2.0.html
-[license]: https://github.com/liorlifshitz/ansible-isp-speedtest/blob/master/LICENSE
-[liorlifshitz]: https://github.com/liorlifshitz
+[license]: https://github.com/autobuilder/ansible-isp-speedtest/blob/master/LICENSE
+[autobuilder]: https://github.com/autobuilder
 [ansiblelint]: https://docs.ansible.com/ansible-lint/
