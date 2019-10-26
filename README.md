@@ -74,7 +74,6 @@ See the [LICENSE][license] file that accompanies this distribution for the full 
 
 [AutoBuilder][autobuilder]
 
-
 [speedtestcli]: https://github.com/sivel/speedtest-cli
 [kitchenci]: https://kitchen.ci
 [apache2]: https://www.apache.org/licenses/LICENSE-2.0.html
