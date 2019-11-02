@@ -8,7 +8,7 @@
   apt:
     name: speedtest-cli
     state: present
-  when: 
+  when:
     - not use_get_url|bool
     - ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
@@ -58,13 +58,13 @@
 - name: "Print Speed-test cli output vaules"
   debug:
     msg:
-    - "Timestamp   :  {{ speedtest_output.timestamp }}"
-    - "Client-IP   :  {{ speedtest_output.client['ip'] }}"
-    - "Client-ISP  :  {{ speedtest_output.client['isp'] }}"
-    - "Server-Host :  {{ speedtest_output.server['host'] }}"
-    - "Server-URL  :  {{ speedtest_output.server['url'] }}"
-    - "Ping        :  {{ speedtest_output.ping }}"
-    - "Download    :  {{ speedtest_output.download }}"
-    - "Upload      :  {{ speedtest_output.upload }}"
-    - "Received    :  {{ speedtest_output.bytes_received }}"
-    - "Sent        :  {{ speedtest_output.bytes_sent }}"
+      - "Timestamp   :  {{ speedtest_output.timestamp }}"
+      - "Client-IP   :  {{ speedtest_output.client['ip'] }}"
+      - "Client-ISP  :  {{ speedtest_output.client['isp'] }}"
+      - "Server-Host :  {{ speedtest_output.server['host'] }}"
+      - "Server-URL  :  {{ speedtest_output.server['url'] }}"
+      - "Ping        :  {{ speedtest_output.ping }}"
+      - "Download    :  {{ speedtest_output.download }}"
+      - "Upload      :  {{ speedtest_output.upload }}"
+      - "Received    :  {{ speedtest_output.bytes_received }}"
+      - "Sent        :  {{ speedtest_output.bytes_sent }}"
