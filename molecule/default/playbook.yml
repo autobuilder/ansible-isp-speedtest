@@ -1,0 +1,9 @@
+---
+
+- name: Converge
+  hosts: all
+  become: true
+  no_log: false
+
+  roles:
+    - role: ansible-isp-speedtest
