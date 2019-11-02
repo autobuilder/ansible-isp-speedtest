@@ -8,7 +8,9 @@
   apt:
     name: speedtest-cli
     state: present
-  when: not use_get_url|bool and (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu')
+  when: 
+    - not use_get_url|bool
+    - ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
 - name: "Install epel-release using yum if CentOS"
   yum:

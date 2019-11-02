@@ -17,5 +17,5 @@ galaxy_info:
       versions:
         - bionic
         - xenial
-  galaxy_tags: ["isp","speedtest"]
+  galaxy_tags: ["isp", "speedtest"]
 dependencies: []
