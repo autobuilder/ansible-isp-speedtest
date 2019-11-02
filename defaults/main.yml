@@ -9,4 +9,4 @@ log_path: "/tmp/speed_test_cli_logs"
 log_file: "{{ log_path }}/{{ log_name }}"
 output_type: "--json"
 # output_type: "--csv"
-use_get_url: true
+use_get_url: false
