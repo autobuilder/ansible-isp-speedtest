@@ -39,7 +39,7 @@
     mode: 0755
 
 - name: "Run Speed-test cli"
-  shell: "{{ role_path }}/files/speedtest-cli {{ output_type }} > {{ log_file }}"
+  shell: "{{ speedtest_command }} {{ output_type }} > {{ log_file }}"
   changed_when: false
 
 - name: "Remove Speed-test file"
