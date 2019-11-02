@@ -2,12 +2,18 @@
 
 # defaults file for ansible-isp-speedtest
 
+output_type: "--json"
+# output_type: "--csv"
+
+use_get_url: true
+
+clean_leftovers: true
+
 date: "{{ ansible_date_time.date }}"
 time: "{{ ansible_date_time.time }}"
 log_name: "speedtest-{{ date }}-{{ time }}.log"
-log_path: "/tmp/speed_test_cli_logs"
+log_path: "/tmp"
 log_file: "{{ log_path }}/{{ log_name }}"
-output_type: "--json"
-#output_type: "--csv"
-speedtest_download_url: "https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py"
-use_get_url: true
+speedtest_file: "speedtest-cli"
+speedtest_path: "/tmp"
+speedtest_command: "{{ speedtest_path }}/{{ speedtest_file }}"

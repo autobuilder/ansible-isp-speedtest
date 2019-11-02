@@ -8,7 +8,9 @@
   apt:
     name: speedtest-cli
     state: present
-  when: not use_get_url|bool and (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu')
+  when:
+    - not use_get_url|bool
+    - ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
 - name: "Install epel-release using yum if CentOS"
   yum:
@@ -26,43 +28,55 @@
 - name: "Download speedtest-cli"
   get_url:
     url: "{{ speedtest_download_url }}"
-    dest: "{{ role_path }}/files/speedtest-cli"
+    dest: "{{ speedtest_path }}/{{ speedtest_file }}"
     mode: 0777
+  changed_when: false
   when: use_get_url|bool
 
-- name: "Create Speet-test logs directory"
-  file:
-    path: "{{ log_path }}"
-    state: directory
-    mode: 0755
-
 - name: "Run Speed-test cli"
-  shell: "{{ role_path }}/files/speedtest-cli {{ output_type }} > {{ log_file }}"
+  command: "{{ speedtest_command }} {{ output_type }}"
   changed_when: false
+  register: speedtest_output
+
+- name: "Print speedtest output"
+  debug:
+    msg: "{{ speedtest_output.stdout }}"
+    verbosity: 1
+
+- name: "Include Speed-test cli output file"
+  set_fact:
+    speedtest_output_json: "{{ speedtest_output.stdout | from_json }}"
+
+- name: "Print parsed speedtest output"
+  debug:
+    msg: "{{ speedtest_output_json }}"
+    verbosity: 1
 
 - name: "Remove Speed-test file"
   file:
     state: absent
-    path: "{{ role_path }}/files/speedtest-cli"
+    path: "{{ speedtest_path }}/{{ speedtest_file }}"
+  changed_when: false
+  when: clean_leftovers
 
-- name: "Include Speed-test cli output file"
-  set_fact:
-    speedtest_output: "{{ lookup('file', log_file) }}"
-
-- name: "Include Speed-test cli output file"
-  set_fact:
-    speedtest_output: "{{ lookup('file', log_file) }}"
+- name: "Remove Speed-test log file"
+  file:
+    state: absent
+    path: "{{ log_path }}/{{ log_file }}"
+  changed_when: false
+  when: clean_leftovers
 
 - name: "Print Speed-test cli output vaules"
   debug:
-    msg:
-    - "Timestamp   :  {{ speedtest_output.timestamp }}"
-    - "Client-IP   :  {{ speedtest_output.client['ip'] }}"
-    - "Client-ISP  :  {{ speedtest_output.client['isp'] }}"
-    - "Server-Host :  {{ speedtest_output.server['host'] }}"
-    - "Server-URL  :  {{ speedtest_output.server['url'] }}"
-    - "Ping        :  {{ speedtest_output.ping }}"
-    - "Download    :  {{ speedtest_output.download }}"
-    - "Upload      :  {{ speedtest_output.upload }}"
-    - "Received    :  {{ speedtest_output.bytes_received }}"
-    - "Sent        :  {{ speedtest_output.bytes_sent }}"
+    msg: |
+      Timestamp   :  {{ speedtest_output_json.timestamp }}
+      Client-IP   :  {{ speedtest_output_json.client['ip'] }}
+      Client-ISP  :  {{ speedtest_output_json.client['isp'] }}
+      Server-Host :  {{ speedtest_output_json.server['host'] }}
+      Server-URL  :  {{ speedtest_output_json.server['url'] }}
+      Ping        :  {{ speedtest_output_json.ping }}
+      Download    :  {{ speedtest_output_json.download }}
+      Upload      :  {{ speedtest_output_json.upload }}
+      Received    :  {{ speedtest_output_json.bytes_received }}
+      Sent        :  {{ speedtest_output_json.bytes_sent }}
+    verbosity: 1

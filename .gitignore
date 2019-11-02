@@ -107,3 +107,5 @@ venv.bak/
 .kitchen/
 
 **/*.retry
+
+**/speed_test_cli_logs/*
